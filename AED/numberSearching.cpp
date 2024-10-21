@@ -1,22 +1,28 @@
 #include <iostream>
 #include <vector>
 
-int Search(std::vector<int> seq, int num)
+int Search(std::vector<int> &seq, int num)
 {
+
     int min = 0;
     int max = seq.size() - 1;
     while (min <= max)
     {
         int med = min + (max - min) / 2;
-        if (med < num)
+        if (seq[med] < num)
         {
-            min = med;
+            min = med + 1;
         }
-        if (med > num)
+        else if (seq[med] > num)
         {
-            max = med;
+            max = med - 1;
+        }
+        else
+        {
+            return med;
         }
     }
+    return -1;
 }
 
 int main()
@@ -27,10 +33,20 @@ int main()
 
     for (int i = 0; i < n; i++)
     {
+        int s;
+        std::cin >> s;
+        nums[i] = s;
+    }
 
+    int Q;
+    std::cin >> Q;
+
+    for (int i = 0; i < Q; i++)
+    {
         int q;
         std::cin >> q;
-        nums[i] = q;
+        int res = Search(nums, q);
+        std::cout << res << std::endl;
     }
 
     return 0;
