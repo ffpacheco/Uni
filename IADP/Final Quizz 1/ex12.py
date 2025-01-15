@@ -16,4 +16,9 @@ def solve():
     print('age')
     print(result)
 
-            
+#------------------------------------------------
+def solve():
+    labels=['very_young', 'young', 'middle_age', 'old', 'very_old']
+    bins=[0,20,40,60,80,100]
+    res=pd.cut(df['age'], bins, right=False, labels=labels).value_counts() #type:ignore
+    print(res)  
