@@ -8,8 +8,8 @@ for i in range(rows):
     for j in range (columns):
         a[i,j]=int(input(f"a[{i},{j}]="))
         
-transpost = np.transpose(a)
+transpost = np.transpose(a)#type:ignore
 print("Matrix transpose:")
 
-for line in transpost:
+for line in transpost:#type:ignore
     print(line)

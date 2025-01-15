@@ -7,7 +7,7 @@ def get_obs(weight):
         return 'overweight'
 
 def solve():
-    df['observation'] = df['weight'].apply(get_obs)
+    df['observation'] = df['weight'].apply(get_obs)#type:ignore
     
-    result = df[['id', 'name', 'weight', 'observation']].head(5)
+    result = df[['id', 'name', 'weight', 'observation']].head(5)#type:ignore
     print(result)

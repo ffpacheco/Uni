@@ -1,3 +1,3 @@
 def solve():    
-    df['city'] = df['city'].str.upper()
-    print(df.head(3))
+    df['city'] = df['city'].str.upper()# type: ignore
+    print(df.head(3))# type: ignore
