@@ -1,3 +1,3 @@
 SELECT P.CODE
 FROM PARISHES P
-WHERE P.NAME ='Mancelos'
+WHERE P.NAME ='Mancelos';

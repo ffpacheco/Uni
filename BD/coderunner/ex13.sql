@@ -8,4 +8,4 @@ WHERE M.DISTRICT = (
         SELECT MAX(P.VOTERS)
         FROM PARTICIPATIONS P
     )
-)
+);
