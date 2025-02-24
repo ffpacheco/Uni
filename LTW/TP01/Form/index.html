@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+
+<body>
+    <h1>Personal Information</h1>
+    <h4>Please tell us all your personal information! You are now less valuable than the data you produce</h4>
+
+    <form>
+        <label for="name"><strong>Name:</strong></label>
+        <input type="text" id="name" name="name" required>
+        <br><br>
+
+        <fieldset>
+            <legend><strong>Age:</strong></legend>
+            <label>
+                <input name="age" type="radio" value="<18"> Under 18
+            </label>
+            <br>
+            <label>
+                <input name="age" type="radio" value="19-35"> 19-35
+            </label>
+            <br>
+            <label>
+                <input name="age" type="radio" value="36-48"> 36-48
+            </label>
+            <br>
+            <label>
+                <input name="age" type="radio" value=">48"> Over 48
+            </label>
+        </fieldset>
+        <br>
+
+        <label for="profession"><strong>Profession:</strong></label>
+        <input id="profession" type="text" list="professions">
+        <datalist id="professions">
+            <option value="Professor">
+            <option value="Politician">
+            <option value="Cook">
+            <option value="Lawyer">
+            <option value="Doctor">
+        </datalist>
+        <br><br>
+
+        <label for="country"><strong>Country:</strong></label>
+        <select id="country" name="country" required>
+            <option value="" disabled selected >-- Choose a Country --</option>
+            <option value="usa">United States</option>
+            <option value="uk">United Kingdom</option>
+            <option value="canada">Canada</option>
+            <option value="germany">Germany</option>
+            <option value="france">France</option>
+            <option value="italy">Italy</option>
+            <option value="japan">Japan</option>
+            <option value="australia">Australia</option>
+        </select>
+        <br><br>
+        <fieldset>
+
+            <legend><strong>Choose some interests:</strong></legend>
+            <label>
+                <input type="checkbox" name="interests" value="sports"> Sports
+            </label>
+            <br>
+            <label>
+                <input type="checkbox" name="interests" value="sports"> Visual Arts
+            </label>
+            <br>
+            <label>
+                <input type="checkbox" name="interests" value="sports"> Music
+            </label>
+            <br>
+            <label>
+                <input type="checkbox" name="interests" value="sports"> Gaming
+            </label>
+            <br>
+            <label>
+                <input type="checkbox" name="interests" value="sports"> Tech
+            </label>
+            <br>
+        </fieldset>
+        <p><strong>How did you find our website?</strong></p>
+        <textarea placeholder="I found your website through ..."></textarea>
+        <br><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+
+</html>
