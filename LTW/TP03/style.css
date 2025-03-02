@@ -12,13 +12,15 @@ title {
 }
 
 body {
-    width: 42%;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 10px;
 }
 
-
+section a:hover{
+    background-color: #2A2F33;
+    color:white;
+}
 header {
     background-color: #046DD5;
     width: 100%;
@@ -78,7 +80,6 @@ nav ul {
     flex-direction: column;
     list-style: none;
     width: 100%;
-    margin-bottom: 0;
     justify-content: center;
 }
 
@@ -87,7 +88,6 @@ nav li {
     text-align: center;
     padding-top: 7px;
     padding-bottom: 11px;
-    padding-left: 12px;
 
 }
 
@@ -141,14 +141,15 @@ nav input {
     padding-top: 19px;
     padding-bottom: 15px;
     margin: 0;
+    position: relative;
 }
 
 #related h1 a {
     text-decoration: none;
     margin-bottom: 17px;
-    margin-left: 15px;
+    padding-left: 10px;
     color: rgb(226, 226, 226);
-    font-size: 13px;
+    font-size: 15px;
 }
 
 #related p {
@@ -205,14 +206,14 @@ p {
 footer {
     color: white;
     padding: 9px;
-    font-size: 9px;
+    font-size: 11px;
     margin-bottom: 12px;
     background-color: #F4655F;
 }
 
 footer a {
     color: white;
-    font-size: 9px;
+    font-size: 11px;
 }
 
 footer .author::before {
