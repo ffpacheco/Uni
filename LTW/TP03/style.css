@@ -16,7 +16,6 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
-
 section a:hover{
     background-color: #2A2F33;
     color:white;
@@ -199,6 +198,7 @@ p {
     font-size: 12px;
 }
 
+
 #news article>p:first-of-type::first-letter {
     font-size: 27px;
 }
@@ -207,7 +207,6 @@ footer {
     color: white;
     padding: 9px;
     font-size: 11px;
-    margin-bottom: 12px;
     background-color: #F4655F;
 }
 

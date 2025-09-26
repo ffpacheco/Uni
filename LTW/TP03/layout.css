@@ -61,6 +61,10 @@ nav ul li {
     align-self: start;
     background-color: white;
 }
+#news article{
+
+    margin-bottom:1em;
+}
 
 #news footer {
     display: grid;
