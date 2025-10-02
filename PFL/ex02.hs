@@ -71,3 +71,36 @@ median a b c |a>b && a<c || a>c && a<b  = a
 
 median_ :: Int -> Int -> Int -> Int
 median_ a b c = a + b + c - max3 a b c - min3 a b c
+
+propDivs :: Integer -> [Integer]
+propDivs n = [d | d <- [1 .. div n 2], mod n d == 0]
+
+perfects :: Integer -> [Integer]
+perfects n = [d | d <- [1 .. n], sum (propDivs d) == d]
+
+pyths :: Integer -> [(Integer,Integer,Integer)]
+pyths n = [(x,y,z) | z <- [1..n], y <- [1..z], x <- [1..z], x*x + y*y == z*z]
+
+isPrime :: Integer -> Bool
+isPrime n   | n<= 1 = False
+            | otherwise = null [x | x <- [2..n - 1], mod n x == 0]
+
+myconcat :: [[a]] -> [a]
+myconcat xxx= [x| xx<-xxx, x<-xx]
+
+myreplicate :: Int -> a -> [a]
+myreplicate n x = [x | _ <- [1..n]]
+
+myIndex :: [a] -> Int -> a
+myIndex x i = head(drop i x)
+
+factorial:: Integer -> Integer
+factorial n = product[1..n]
+
+binom :: Integer -> Integer -> Integer
+binom n k = div (factorial n) (factorial k * factorial (n - k))
+
+pascal :: Integer -> [[Integer]]
+pascal n = [
+    [binom x y | y <-[0..x]]| x <-[0..n]
+    ]
