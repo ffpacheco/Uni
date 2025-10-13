@@ -84,3 +84,8 @@ fromBitsAux :: Int -> [Int] -> Int
 fromBitsAux n [] = n
 fromBitsAux n (x:xs) = fromBitsAux(n * 2 + x) xs
 
+divisors :: Integer -> [Integer]
+divisors n = filter (\x -> mod n x == 0)[1..n]
+
+isPrimeFast_ :: Integer -> Bool
+isPrimeFast_
