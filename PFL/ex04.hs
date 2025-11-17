@@ -1,3 +1,5 @@
+import Data.Char
+
 fours :: [Double]
 fours = cycle[4.0,-4.0]
 
@@ -47,9 +49,29 @@ merge (x:xs) (y:ys) | x < y = x : merge xs (y:ys)
                     | x > y = y : merge (x:xs) ys
                     | otherwise = x : merge ys xs
 
-hamming_ :: [Integer]
-hamming_ = 1: merge m2 (merge m3 m5)
-    where
-        m2=map(2*) hamming_
-        m3=map(3*) hamming_
-        m5=map(5*) hamming_
+sndhamming :: [Integer]
+sndhamming = 1 : merge (map (*2) sndhamming)(merge (map (*3) sndhamming)(map (*5) sndhamming))
+
+rot13 :: Char -> Char
+rot13 c
+    | 'a' <= c && c <= 'z' = chr (ord 'a' + mod (ord c - ord 'a' + 13) 26)
+    | 'A' <= c && c <= 'Z' = chr (ord 'A' + mod (ord c - ord 'A' + 13) 26)
+    | otherwise = c
+
+wordsThatFit :: Int -> [String] -> Int
+wordsThatFit n [] = 0
+wordsThatFit max (w:ws)
+    | length w > max = 0
+    | otherwise = countWords (length w) ws 1
+            where
+                countWords :: Int -> [String] -> Int -> Int
+                countWords n [] acc = acc
+                countWords used (x:xs) acc
+                    | used + 1 + length x <= max = countWords (used + 1 + length x) xs (acc + 1)
+                    | otherwise = acc
+
+fillWords :: Int -> [String] -> [[String]]
+fillWords n [] = []
+fillWords n (x:xs) =
+    let (line, rest) = splitAt (wordsThatFit max ws) ws
+    in line : fillWords max rest
