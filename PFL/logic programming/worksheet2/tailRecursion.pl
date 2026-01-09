@@ -39,3 +39,14 @@ square_rec_helper(N,M,Acc,S) :-
     M1 is M - 1,
     Acc1 is Acc + N,
     square_rec_helper(N,M1,Acc1,S).
+
+
+fibonacci(N,S) :-
+    fibonacci_helper(N,0,1,S), !.
+
+fibonacci_helper(0,A,B,A).
+fibonacci_helper(N,A,B,S) :-
+    N>0,
+    N1 is N-1,
+    Acc is A + B,
+    fibonacci_helper(N1, B, Acc, S).
