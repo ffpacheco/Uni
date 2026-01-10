@@ -65,4 +65,4 @@ print_list_aux([H|[]],_):-
 print_list_aux([H|List], Step):-
     write(H),
     write(Step),
-    print_list_aux(List, Step).
+    print_list_aux(List, Step), !.
